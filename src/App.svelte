@@ -5,6 +5,7 @@
   import FeaturedProducts from './components/FeaturedProducts.svelte';
   import Footer from './components/Footer.svelte';
   import Cart from './components/Cart.svelte';
+  import SpecialOccasions from './components/SpecialOccasions.svelte';
 
   export let url = "";
 </script>
@@ -16,6 +17,7 @@
     <Route path="/" let:params>
       <HeroSection />
       <FeaturedProducts />
+      <SpecialOccasions />
     </Route>
 
     <Route path="/cart" component={Cart} />
