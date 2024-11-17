@@ -17,7 +17,7 @@
   
   <style>
     .mask-radial-gradient {
-      mask-image: radial-gradient(circle, black 55%, transparent 75%);
-      -webkit-mask-image: radial-gradient(circle, black 55%, transparent 75%);
+      mask-image: radial-gradient(circle, black 40%, transparent 70%);
+      -webkit-mask-image: radial-gradient(circle, black 40%, transparent 70%);
     }
   </style>
