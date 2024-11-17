@@ -1,82 +1,104 @@
 <script>
-  // Svelte store to handle active page
-  import { writable } from 'svelte/store';
-  const activePage = writable('home');
-
-  // Importing images
-  import cupcakeAssortment from './assets/backgroundcupcake.jpeg';
-  import specialOccasions from './assets/specialoccasions.png';
-  import deliveryIcon from './assets/deliveryIcon.png';
-  import aboutUsImage from './assets/aboutUs.png';
+  // You can add any necessary logic here
+  import TorontoCupcakeLogo from './assets/TC logo.png';
+  import HeroCupcakeImage from './assets/Hero section cupcakes.webp';
+  import ChocolateHazelnutImage from './assets/ChocolateHazelnut.webp';
 </script>
 
-<main class="container mx-auto p-4">
-  <header class="border-q">
-    <h1 class="text-4xl font-bold text-center border-white" >Toronto Cupcake</h1>
-  </header>
-  <header class="bg-amber-100 p-4 flex justify-between items-center">
-    <div class="logo">
-      <img src="/assets/logo.png" alt="Logo" class="h-12">
-    </div>
-    <nav class="space-x-4">
-      <a href="#" on:click={() => activePage.set('home')} class="text-gray-800 hover:text-amber-600">Home</a>
-      <a href="#" on:click={() => activePage.set('occasions')} class="text-gray-800 hover:text-amber-600">Occasions</a>
-      <a href="#" on:click={() => activePage.set('delivery')} class="text-gray-800 hover:text-amber-600">Delivery</a>
-      <a href="#" on:click={() => activePage.set('about')} class="text-gray-800 hover:text-amber-600">About Us</a>
-      <a href="#" on:click={() => activePage.set('contact')} class="text-gray-800 hover:text-amber-600">Contact</a>
-    </nav>
-  </header>
-
-  {#if $activePage === 'home'}
-    <section class="hero bg-cover bg-center text-center text-white font-bold py-32" style="background-image: url('assets/kidsEatingCupcake.jpg');">
-      <h1 class="text-4xl mb-4">Canada's and Greater Toronto Area's Favorite Stop for Special Treats!</h1>
-      <button class="bg-pink-500 text-white py-2 px-4 rounded hover:bg-pink-600">Order Here</button>
-    </section>
-
-    <section class="mt-8">
-      <h2 class="text-2xl font-bold mb-4">One Dozen of Assorted Cupcakes</h2>
-      <div class="special-card flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
-        <img src={cupcakeAssortment} alt="One dozen assorted cupcakes" class="mb-4">
-        <p class="mb-4">12 Delicious treats in one click - $38/dozen</p>
-        <button class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600">Add to Cart</button>
+<main class="bg-pink-50 min-h-screen">
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+      <img src={TorontoCupcakeLogo} alt="Toronto Cupcakes" class="h-12">
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="#" class="text-gray-700 hover:text-pink-500">Home</a></li>
+          <li><a href="#" class="text-gray-700 hover:text-pink-500">Shop</a></li>
+          <li><a href="#" class="text-gray-700 hover:text-pink-500">About</a></li>
+          <li><a href="#" class="text-gray-700 hover:text-pink-500">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <button class="text-gray-700 hover:text-pink-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </button>
+        <button class="text-gray-700 hover:text-pink-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </button>
       </div>
-    </section>
-  {/if}
+    </div>
+  </header>
 
-  {#if $activePage === 'occasions'}
-    <section class="mt-8">
-      <h2 class="text-2xl font-bold mb-4">Special Occasions</h2>
-      <img src={specialOccasions} alt="Special Occasions cupcakes" class="w-full rounded-lg mb-4">
-      <p>Celebrate your occasions with our amazing cupcakes!</p>
-    </section>
-  {/if}
+  <!-- Hero Section -->
+  <section class="container mx-auto px-4 py-16">
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-8 md:mb-0">
+        <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4">Delicious Cupcakes for Every Occasion</h1>
+        <p class="text-xl text-gray-600 mb-8">Handcrafted with love in Toronto</p>
+        <button class="bg-pink-500 text-white px-8 py-3 rounded-full hover:bg-pink-600 transition duration-300">Shop Now</button>
+      </div>
+      <div class="md:w-1/2">
+        <img src={HeroCupcakeImage} alt="Cupcakes" class="w-full h-full object-cover mask-radial-gradient">
+      </div>
+    </div>
+  </section>
 
-  {#if $activePage === 'delivery'}
-    <section class="mt-8">
-      <h2 class="text-2xl font-bold mb-4">Local Delivery Available</h2>
-      <img src={deliveryIcon} alt="Delivery Icon" class="w-24 mb-4">
-      <p class="mb-4">We deliver cupcakes to select areas within Toronto. Click below to contact us for details.</p>
-      <button class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Contact Us</button>
-    </section>
-  {/if}
+  <!-- Featured Products -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Featured Cupcakes</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Repeat this card for each featured product -->
+        <div class="bg-pink-100 rounded-lg overflow-hidden shadow-md">
+          <img src={ChocolateHazelnutImage} alt="Cupcake" class="">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Chocolate Hazelnut</h3>
+            <p class="text-gray-600 mb-4">Rich chocolate cupcake with creamy frosting</p>
+            <div class="flex justify-between items-center">
+              <span class="text-pink-500 font-bold">$3.99</span>
+              <button class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition duration-300">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <!-- Repeat for other cupcakes -->
+      </div>
+    </div>
+  </section>
 
-  {#if $activePage === 'about'}
-    <section class="mt-8">
-      <h2 class="text-2xl font-bold mb-4">About Us</h2>
-      <img src={aboutUsImage} alt="About Us" class="w-full rounded-lg mb-4">
-      <p>Toronto Cupcake was created by pastry chefs with a passion for baking amazing cupcakes.</p>
-    </section>
-  {/if}
-
-  {#if $activePage === 'contact'}
-    <section class="mt-8">
-      <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
-      <form class="flex flex-col space-y-4">
-        <input type="text" placeholder="Name" required class="p-2 border border-gray-300 rounded">
-        <input type="email" placeholder="Email" required class="p-2 border border-gray-300 rounded">
-        <textarea placeholder="Your Message" required class="p-2 border border-gray-300 rounded"></textarea>
-        <button type="submit" class="bg-purple-500 text-white py-2 px-4 rounded hover:bg-purple-600">Send Message</button>
-      </form>
-    </section>
-  {/if}
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4">About Us</h3>
+          <p class="text-gray-400">Toronto Cupcake is dedicated to bringing you the most delicious cupcakes in the city.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Delivery</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Returns</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+          <p class="text-gray-400">123 Cupcake Street, Toronto, ON</p>
+          <p class="text-gray-400">Phone: (123) 456-7890</p>
+          <p class="text-gray-400">Email: info@torontocupcake.com</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </main>
+
+<style>
+  .mask-radial-gradient {
+  mask-image: radial-gradient(circle, black 55%, transparent 75%);
+  -webkit-mask-image: radial-gradient(circle, black 55%, transparent 75%);
+}
+</style>
