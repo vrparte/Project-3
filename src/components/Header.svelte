@@ -2,8 +2,8 @@
     import TorontoCupcakeLogo from '../assets/TC logo.png';
   </script>
   
-  <header class="bg-white shadow-md">
-    <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+  <header class="bg-white shadow-md top-0 fixed w-full z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <div class="flex items-center">
             <img src={TorontoCupcakeLogo} alt="Toronto Cupcakes" class="h-12 px-3">
             <h1 class="font-bold text-gray-700 text-2xl">Toronto Cupcakes</h1>

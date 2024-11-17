@@ -4,13 +4,15 @@
   import FeaturedProducts from './components/FeaturedProducts.svelte';
   import Footer from './components/Footer.svelte';
   import Cart from './components/Cart.svelte';
+  import SpecialOccasions from './components/SpecialOccasions.svelte';
 </script>
 
 <main class="bg-pink-50 min-h-screen">
   <Header />
   <HeroSection />
   <FeaturedProducts />
-  <Cart
+  <Cart/>
+  <SpecialOccasions />
   <Footer />
 </main>
 
