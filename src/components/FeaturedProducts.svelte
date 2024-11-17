@@ -2,6 +2,7 @@
 <script>
     import MenuCard from './MenuCard.svelte';
     import { cupcakes } from '../data/cupcakes';
+    import { cart } from '../cartStore.js';
     
     let visibleCupcakes = 6; // Initial number of visible cupcakes
     const increment = 3; // Number of cupcakes to add/remove when expanding/collapsing
@@ -13,6 +14,10 @@
     function showLess() {
         visibleCupcakes = 3;
     }
+
+    function addToCart(cupcake) {
+    cart.addItem(cupcake);
+    }
 </script>
 
 <section class="bg-white py-16">
@@ -20,7 +25,7 @@
         <h2 class="text-3xl font-bold text-center mb-12">Featured Cupcakes</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full sm:w-[90%] md:w-[80%] mx-auto">
             {#each cupcakes.slice(0, visibleCupcakes) as cupcake}
-                <MenuCard {...cupcake} />
+              <MenuCard {...cupcake} on:addToCart={() => addToCart(cupcake)} />
             {/each}
         </div>
         <div class="text-center mt-8">

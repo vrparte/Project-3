@@ -1,11 +1,14 @@
 <!-- MenuCard.svelte -->
 <script>
+    import { createEventDispatcher } from 'svelte';
     import { cart } from '../cartStore.js';
 
     export let name;
     export let description;
     export let image;
     export let price;
+
+    const dispatch = createEventDispatcher();
 
     let quantity = 0;
 
@@ -19,15 +22,18 @@
 
     function addToCart() {
         cart.addItem({ name, description, image, price, quantity: 1 });
+        dispatch('addToCart', { name, description, image, price, quantity: 1 });
     }
 
     function increment() {
         cart.updateQuantity(name, quantity + 1);
+        dispatch('updateCart', { name, quantity: quantity + 1 });
     }
 
     function decrement() {
         if (quantity > 0) {
             cart.updateQuantity(name, quantity - 1);
+            dispatch('updateCart', { name, quantity: quantity - 1 });
         }
     }
 </script>
@@ -38,7 +44,7 @@
         <h3 class="text-xl font-semibold mb-2">{name}</h3>
         <p class="text-gray-600 mb-4">{description}</p>
         <div class="flex justify-between items-center">
-            <span class="text-pink-500 font-bold">${price}</span>
+            <span class="text-pink-500 font-bold">${price.toFixed(2)}</span>
             {#if quantity === 0}
                 <button 
                     on:click={addToCart}
