@@ -18,7 +18,7 @@
 
 <section class="bg-white py-16">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">Your Cart</h2>
+        <h2 class="text-4xl font-bold text-center mb-16 text-pink-600 font-cursive">Your Cart</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full sm:w-[90%] md:w-[80%] mx-auto">
             <!-- Cart Items List -->

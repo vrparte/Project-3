@@ -22,7 +22,6 @@
 
     function addToCart() {
         cart.addItem({ name, description, image, price, quantity: 1 });
-        dispatch('addToCart', { name, description, image, price, quantity: 1 });
     }
 
     function increment() {
