@@ -1,7 +1,7 @@
 <!-- Cart.svelte -->
 <script>
     import { cart } from '../cartStore.js';
-    import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+    import { faShoppingCart, faTrash } from '@fortawesome/free-solid-svg-icons';
     import Icon from 'svelte-awesome';
 
     function removeItem(itemName) {
@@ -60,11 +60,12 @@
                                         +
                                     </button>
                                 </div>
+                                <span class="font-semibold">${(item.price * item.quantity).toFixed(2)}</span>
                                 <button 
                                     on:click={() => removeItem(item.name)}
                                     class="text-red-500 hover:text-red-600"
                                 >
-                                    Remove
+                                    <Icon data={faTrash} scale={1.2} />
                                 </button>
                             </div>
                         </div>
