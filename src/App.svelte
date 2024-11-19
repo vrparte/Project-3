@@ -11,7 +11,7 @@
 </script>
 
 <Router {url}>
-  <main class="bg-pink-50 min-h-screen">
+  <main class="bg-pink-50 min-h-screen mt-12">
     <Header />
     
     <Route path="/" let:params>
