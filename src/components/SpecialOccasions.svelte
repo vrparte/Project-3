@@ -5,6 +5,7 @@
     import BabyShower from "../assets/babyShower.png";
     import Corporate from "../assets/CorporateEvents.webp";
     import Graduation from "../assets/Graduation.png";
+    import Wedding1 from "../assets/Wedding1.png";
     
     let currentIndex = 0;
     const occasions = [
@@ -21,7 +22,7 @@
       },
       { 
         name: "Wedding Elegance", 
-        image: Wedding, 
+        image: Wedding1, 
         description: "Elevate your wedding reception with our exquisite cupcake displays. Elegant, delicious, and perfectly matched to your wedding theme.",
         details: [
           "Tiered cupcake stands",
@@ -81,7 +82,7 @@
 
 <section class="bg-white py-16 relative" id="Occasions">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-4">Special Occasions</h2>
+    <h2 class="text-4xl font-bold text-center mb-16 text-pink-600 font-cursive">Special Occasions</h2>
     <p class="text-center text-gray-600 mb-12 text-lg sm:w-[90%] md:w-[80%] mx-auto">
       Elevate every celebration with our custom-designed cupcakes. From intimate gatherings to grand events, we create sweet memories that last a lifetime.
     </p>
