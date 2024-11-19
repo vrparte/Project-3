@@ -75,14 +75,14 @@
     });
 </script>
 
-<section class="bg-white py-16 relative">
+<section class="bg-white py-16 relative" id="Occasions">
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-bold text-center mb-4">Special Occasions</h2>
     <p class="text-center text-gray-600 mb-12 text-lg sm:w-[90%] md:w-[80%] mx-auto">
       Elevate every celebration with our custom-designed cupcakes. From intimate gatherings to grand events, we create sweet memories that last a lifetime.
     </p>
     
-    <div class="relative w-full overflow-hidden">
+    <div class="relative w-[90%] mx-auto overflow-hidden">
       <div 
         class="flex transition-transform duration-500 ease-in-out" 
         style="transform: translateX(calc(-{currentIndex * 100}%))"
