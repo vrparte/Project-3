@@ -3,6 +3,10 @@
     import { cart } from '../cartStore.js';
     import { faShoppingCart, faTrash } from '@fortawesome/free-solid-svg-icons';
     import Icon from 'svelte-awesome';
+    import Toast from './Toast.svelte';
+
+    let showToast = false;
+    let toastMessage = '';
 
     function removeItem(itemName) {
         cart.removeItem(itemName);
@@ -12,10 +16,19 @@
         cart.updateQuantity(itemName, newQuantity);
     }
 
+    function placeOrder() {
+        showToast = true;
+        toastMessage = 'Order placed successfully!';
+        setTimeout(() => {
+            cart.clear(); // Changed from clearCart to clear
+            showToast = false;
+        }, 3000);
+    }
+
     $: cartItems = Object.values($cart);
     $: subtotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-    $: tax = subtotal * 0.08; // Assuming 8% tax rate
-    $: deliveryFee = cartItems.length > 0 ? 5.99 : 0; // Fixed delivery fee, only if cart is not empty
+    $: tax = subtotal * 0.08;
+    $: deliveryFee = cartItems.length > 0 ? 5.99 : 0;
     $: total = subtotal + tax + deliveryFee;
 </script>
 
@@ -97,6 +110,7 @@
                     <!-- Order Button -->
                     <button 
                         class="w-full bg-pink-500 text-white px-6 py-3 rounded-full hover:bg-pink-600 transition duration-300 mt-8 text-lg font-semibold"
+                        on:click={placeOrder}
                     >
                         Place Order
                     </button>
@@ -105,3 +119,7 @@
         {/if}
     </div>
 </section>
+
+{#if showToast}
+    <Toast message={toastMessage} />
+{/if}
