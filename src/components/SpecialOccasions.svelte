@@ -1,12 +1,16 @@
 <script>
     import { onMount } from 'svelte';
     import Wedding from "../assets/Wedding.webp";
+    import Birthday from "../assets/birthdayCelebrations.png";
+    import BabyShower from "../assets/babyShower.png";
+    import Corporate from "../assets/CorporateEvents.webp";
+    import Graduation from "../assets/Graduation.png";
     
     let currentIndex = 0;
     const occasions = [
       { 
         name: "Birthday Celebrations", 
-        image: "/images/birthday-cupcakes.jpg", 
+        image: Birthday, 
         description: "Make every birthday unforgettable with our custom-designed cupcakes. From children's parties to milestone birthdays, we create sweet memories that last a lifetime.",
         details: [
           "Custom themed designs",
@@ -28,7 +32,7 @@
       },
       { 
         name: "Corporate Events", 
-        image: "/images/corporate-cupcakes.jpg", 
+        image: Corporate, 
         description: "Impress clients and motivate employees with our professionally crafted cupcake arrangements. Perfect for meetings, celebrations, and team events.",
         details: [
           "Logo branding options",
@@ -39,7 +43,7 @@
       },
       { 
         name: "Baby Shower", 
-        image: "/images/baby-shower-cupcakes.jpg", 
+        image: BabyShower, 
         description: "Celebrate new life with adorable and delicious cupcakes that match your baby shower theme and bring joy to the celebration.",
         details: [
           "Gender reveal designs",
@@ -50,7 +54,7 @@
       },
       { 
         name: "Graduation Celebration", 
-        image: "/images/graduation-cupcakes.jpg", 
+        image: Graduation, 
         description: "Commemorate academic achievements with our specially designed graduation cupcakes that capture the excitement of this milestone.",
         details: [
           "School color themes",
